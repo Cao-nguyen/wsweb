@@ -1,0 +1,67 @@
+extends ../../layouts/default.pug 
+include ../../mixins/select-tree.pug
+include ../../mixins/draft-a-document.pug
+
+block main 
+    .main 
+        - if (messages.validate)
+            div(
+                class="message-validate"
+                show-alert 
+                data-time="5000"
+            ) #{messages.validate} <i class="fa-solid fa-x" close></i>
+                
+        - if (messages.create)
+            div(
+                class="message-create"
+                show-alert 
+                data-time="5000"
+            ) #{messages.create} <i class="fa-solid fa-x" close></i>
+
+        form(
+            action="/admin/products/create"
+            id="form-create-products"
+            method="POST"
+            enctype="multipart/form-data"
+        )
+            .form-group 
+                label(for="title") Tiêu đề bài viết 
+                input(
+                    type="text"
+                    class="form-item"
+                    id="title"
+                    name="name"
+                    required 
+                ) 
+            .form-group 
+                label(for="category_id") Danh mục
+                select(
+                    name="category_id"
+                    id="category_id"
+                    class="form-item"
+                    style="width: 100%; padding: 10px 5px; font-size: 16px"
+                ) 
+                    option(value="") -- Chọn danh mục cha --
+                    if category && category.length > 0
+                        +select-tree(category)
+            .form-group 
+                label(for="desc") Nội dung bài viết
+                +text-editor(name="content")
+            .form-group(upload-image)
+                label(for="img") Chọn ảnh
+                input(
+                    type="file"
+                    class="form-item"
+                    id="img"
+                    name="image"
+                    upload-img
+                    required 
+                ) 
+                .upload-preview 
+                    img(src="", alt="", upload-img-preview)
+                    i(class="fa-solid fa-x" deletePreview)
+            .form-group 
+                button(
+                    type="submit"
+                    class="new-create"
+                ) Đăng bài viết

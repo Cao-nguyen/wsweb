@@ -1,0 +1,39 @@
+header
+    .logo 
+        img(src="/img/logo.png", alt="")
+    ul.menu 
+        li 
+            a(href="/") Trang chủ 
+        li 
+            a(href="/products") Sản phẩm
+        li 
+            a(href="/chat") Diễn đàn
+
+        form(
+                action="/search"
+                method="GET"
+            )
+                .search
+                    input#search(
+                        type="text"
+                        placeholder="Nhập từ khoá..."
+                        name="keyword"
+                        value=keyword
+                        style="padding: 5px 10px"
+                    )
+                    button(
+                        type="submit"
+                    ) Tìm
+        li 
+            a(href="")
+        
+        if(user)    
+            li 
+                a(href=`/user/@${user.email}`) #{user.fullName}
+            li 
+                a(href="/user/logout") Đăng xuất
+        else
+            li 
+                a(href="/user/register") Đăng ký
+            li 
+                a(href="/user/login") Đăng nhập
