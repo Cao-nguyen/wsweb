@@ -5,6 +5,22 @@
     font-family: 'roboto', sans-serif;
 }
 
+/* Thanh cuộn */
+
+::-webkit-scrollbar {
+    width: 5px; 
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--white-color); 
+}
+
+/* Các thiết lập khác */
+
 body{
     background-color: var(--bg);
 }

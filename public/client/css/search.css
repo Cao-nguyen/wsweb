@@ -1,0 +1,31 @@
+h1.content-search-title {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--white-color);
+    font-size: 20px;
+}
+
+.content-search {
+    margin: 30px 300px;
+    background-color: var(--white-color);
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.content-search p {
+    font-size: 20px; 
+    margin: 8px 0px;
+}
+
+.content-search p a {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.content-search p i{
+    transform: rotate(90deg)
+}
+
+.content-search p:hover{
+    margin-left: 10px;
+}
