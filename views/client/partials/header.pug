@@ -2,13 +2,6 @@ header
     .logo 
         img(src="/img/logo.png", alt="")
     ul.menu 
-        li 
-            a(href="/") Trang chủ 
-        li 
-            a(href="/products") Sản phẩm
-        li 
-            a(href="/chat") Diễn đàn
-
         form(
                 action="/search"
                 method="GET"
@@ -19,21 +12,18 @@ header
                         placeholder="Nhập từ khoá..."
                         name="keyword"
                         value=keyword
-                        style="padding: 5px 10px"
                     )
-                    button(
+                    button#search(
                         type="submit"
-                    ) Tìm
+                    ) <i class="fa-solid fa-magnifying-glass"></i>
+
         li 
-            a(href="")
-        
-        if(user)    
-            li 
-                a(href=`/user/@${user.email}`) #{user.fullName}
-            li 
-                a(href="/user/logout") Đăng xuất
-        else
-            li 
-                a(href="/user/register") Đăng ký
-            li 
-                a(href="/user/login") Đăng nhập
+            a(href="/") Trang chủ 
+        li 
+            a(href="/gioithieu") Giới thiệu
+        li 
+            a(href="/thevote") The vote
+        li 
+            a(href="/tintuc") Tin tức
+        li 
+            a(href="/hoptac") Hợp tác

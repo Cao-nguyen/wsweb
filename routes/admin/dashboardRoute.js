@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const controllers = require('../../controllers/admin/dashboardControllers')
+// const controllers = require('../../controllers/client/homeControllers')
 
-router.get('/', controllers.dashboard)
+// router.get('/', controllers.index)
 
 module.exports = router
