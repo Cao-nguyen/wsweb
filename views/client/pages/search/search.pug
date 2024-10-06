@@ -4,11 +4,11 @@ block main
     .main
         h1.content-search-title Kết quả tìm kiếm của: "#{keyword}"
         .content-search 
-            p 
-                a(href="") <i class="fa-solid fa-caret-up"></i> Lý Cao Nguyên đang làm gì?
-            p 
-                a(href="") <i class="fa-solid fa-caret-up"></i> Những ngày sống khổ
-            p 
-                a(href="") <i class="fa-solid fa-caret-up"></i> Tin tức của người tử tù
+            if news.length > 0
+                each item in news 
+                    p 
+                        a(href=`/tintuc/${item.slug}`) <i class="fa-solid fa-caret-up"></i> #{item.title}
+            else 
+                p Không có kết quả tìm kiếm nào như bạn nhập
 
     link(rel="stylesheet", href="/client/css/search.css")

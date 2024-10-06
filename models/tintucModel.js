@@ -9,7 +9,7 @@ const News = new Schema({
     title: { type: String }, 
     image: { type: String }, 
     content: { type: String }, 
-    slug: { type: String }, 
+    slug: { type: String, slug: 'title', unique: true },
     deleted: { type: String, default: false },
 }, 
 {
