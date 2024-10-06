@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-:root{
+:root {
     --black-color: #000000;
     --white-color: #FFF;
     --gray-light-color: #EEE;
@@ -13,6 +13,22 @@
     --blue-light-clone-color: #3737a8;
     --green-color: rgb(40, 185, 40);
     --box-shadow-01: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+body {
+    overflow: hidden;  /* Ngăn cuộn cho toàn bộ trang */
+    height: 100vh;    /* Chiều cao toàn bộ trang */
+}
+
+.admin {
+    display: flex; /* Sử dụng flex để tạo cấu trúc hai cột */
+    height: 100%;  /* Đảm bảo chiều cao bằng với chiều cao của body */
+}
+
+.ad-main {
+    flex-grow: 1;       /* Để phần ad-main chiếm hết không gian còn lại */
+    overflow-y: auto;   /* Cho phép cuộn dọc */
+    margin-top: 60px;   /* Đặt lề trên bằng chiều cao của header */
 }
 
 header {
@@ -33,51 +49,51 @@ header .logo img {
 }
 
 /* sider */
-.sider{
+.sider {
     width: 200px;
-    top: 60px;
-    bottom: 0;
+    top: 60px;  /* Bắt đầu ngay dưới header */
+    bottom: 0;  
     background-color: var(--blue-dark-clone-color);
-    position: absolute;
+    position: fixed;
 }
 
-.sider .logo{
+.sider .logo {
     background-color: var(--blue-dark-color);
 }
 
-.sider .logo img{
+.sider .logo img {
     padding: 5px 5px;
     width: 50px;
 }
 
-a.sider-link h2{
+a.sider-link h2 {
     padding-left: 10px;
     line-height: 60px;
 }
 
-.sider .sider-tab .sider-item{
+.sider .sider-tab .sider-item {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10%;
 }
 
-.sider .sider-tab .sider-item:hover{
+.sider .sider-tab .sider-item:hover {
     background-color: var(--blue-light-clone-color);
     transition: 0.3s ease-in-out;
 }
 
-.active{
+.active {
     background-color: var(--blue-light-clone-color);
     transition: 0.3s ease-in-out;
 }
 
-.sider .sider-tab .sider-item i{
+.sider .sider-tab .sider-item i {
     font-size: 20px;
     padding-right: 10px;
     color: var(--gray-light-color);
 }
 
-a.sider-link{
+a.sider-link {
     display: flex;
     text-decoration: none;
     font-weight: bold;

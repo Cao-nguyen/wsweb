@@ -1,0 +1,30 @@
+extends ../../layouts/default.pug 
+include ../../mixins/draft-a-document.pug
+
+block main
+    .main
+        form(
+            action="/admin/tintuc/create"
+            id="form-create"
+            method="POST"
+        )
+            .form-group 
+                label(for="title") Tiêu đề tin tức
+                input(
+                    type="text"
+                    class="form-item"
+                    id="title"
+                    name="title"
+                    required 
+                ) 
+            .form-group 
+                label(for="desc") Nội dung bài viết
+                +text-editor(name="content")
+            .form-group 
+                button(
+                    type="submit"
+                    class="new-create"
+                ) Đăng bài viết
+
+    link(rel="stylesheet", href="/admin/css/tintuc.css")
+    script(src="/admin/js/editor.js")
