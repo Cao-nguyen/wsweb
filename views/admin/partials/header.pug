@@ -1,9 +1,4 @@
 header
-    .admin
-        h2 #{pageTitle}
-        a.acc(
-            href="/admin/my-account"
-        ) #{user.fullName}
-        a.logout-button(
-            href="/admin/auth/logout"
-        ) Đăng xuất
+    .logo 
+        a.sider-link(href="/admin/dashboard") 
+            img(src="/img/logo.png", alt="")

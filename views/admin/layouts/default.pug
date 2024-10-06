@@ -15,14 +15,10 @@ html(lang="en")
         title #{pageTitle}
     body 
         .container
-            include ../partials/sider.pug
+            include ../partials/header.pug
             .admin
-                include ../partials/header.pug
+                include ../partials/sider.pug
                 block main 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js")
-    script(src="/tinymce/tinymce.min.js")
-    script(src="/admin/js/tinymce.js")
     script(src="/admin/js/admin.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-javascript.min.js")
     script(src="/admin/js/editor.js")
