@@ -2,9 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function(event) {
             const url = this.getAttribute('href');
+
             if (!url.startsWith('#')) {
                 event.preventDefault(); 
-                loadContent(url);
+                loadContent(url); 
             }
         });
     });
