@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+    <div class="container mt-4">
+        <h1 class="mb-4">Tin tức</h1>
+        <div class="row">
+            <% news.forEach(item=> { %>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= item.title %>
+                            </h5>
+                            <p class="card-text">
+                                <%= item.content.substring(0, 100) %>...
+                            </p>
+                            <form action="/news/vote/<%= item._id %>" method="POST">
+                                <button class="btn btn-primary">Bình chọn (<%= item.votes %>)</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+    <%- include('partials/footer') %>

@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+    <div class="container mt-4">
+        <div class="jumbotron text-center bg-light p-5 rounded">
+            <h1 class="display-4">Chào mừng đến với Website!</h1>
+            <% if (user) { %>
+                <p class="lead">Xin chào, <%= user.username %>! Khám phá các tin tức nổi bật ngay bây giờ.</p>
+                <% } else { %>
+                    <p class="lead">Hãy đăng ký hoặc đăng nhập để sử dụng các tính năng của chúng tôi.</p>
+                    <a href="/auth/login" class="btn btn-primary btn-lg">Đăng nhập</a>
+                    <a href="/auth/register" class="btn btn-success btn-lg">Đăng ký</a>
+                    <% } %>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
